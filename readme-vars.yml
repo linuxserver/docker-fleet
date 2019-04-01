@@ -1,0 +1,71 @@
+---
+
+# project information
+project_name: fleet
+project_url: "https://github.com/linuxserver/fleet"
+project_logo: ""
+project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) provides an online web interface which displays a set of maintained images from one or more owned repositories."
+project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+
+project_blurb_optional_extras_enabled: false
+project_blurb_optional_extras: []
+
+# supported architectures
+available_architectures:
+  - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
+  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
+  - { arch: "{{ arch_armhf }}", tag: "arm32v7-latest"}
+
+# development version
+development_versions: false
+development_versions_items:
+
+# container parameters
+common_param_env_vars_enabled: true
+param_container_name: "{{ project_name }}"
+
+param_usage_include_net: false
+
+param_usage_include_env: true
+param_env_vars:
+  - { env_var: "fleet_refresh_interval", env_value: "60", desc: "The time in minutes for how often Fleet should scan the Docker Hub repositories." }
+  - { env_var: "fleet_admin_authentication_type", env_value: "DATABASE", desc: "A switch to define how Fleet manages user logins. If set to DATABASE, see the related optional params. Can be set to either DATABASE or PROPERTIES." }
+  - { env_var: "fleet_database_url", env_value: "jdbc:mariadb://<url>:3306/fleet", desc: "The full JDBC connection string to the Fleet database" }
+  - { env_var: "fleet_database_username", env_value: "fleet_user", desc: "The username with the relevant GRANT permissions for the database" }
+  - { env_var: "fleet_database_password", env_value: "dbuserpassword", desc: "The database user's password." }
+  - { env_var: "fleet_dockerhub_username", env_value: "dockerhub_user", desc: "The username of a member of your repository's owners team. This is used to get the list of your (and only your) namespaces in Docker Hub." }
+  - { env_var: "fleet_dockerhub_password", env_value: "password", desc: "The password for the Docker Hub user." }
+
+param_usage_include_vols: true
+param_volumes:
+  - { vol_path: "/config", vol_host_path: "</path/to/appdata/config>", desc: "The primary config file and rolling log files." }
+
+param_usage_include_ports: true
+param_ports:
+  - { external_port: "8080", internal_port: "8080", port_desc: "Http port" }
+
+opt_param_usage_include_env: true
+opt_param_env_vars:
+  - { env_var: "fleet_admin_secret", env_value: "randomstring", desc: "A string used as part of the password key derivation process. Not mandatory. Only used if authentication type is set to DATABASE." }
+  - { env_var: "fleet_admin_username", env_value: "admin", desc: "The name of the sole admin user, if authentication type is set to PROPERTIES." }
+  - { env_var: "fleet_admin_password", env_value: "secretpassword", desc: "The password for the sole admin user, if authentication type is set to PROPERTIES." }
+  - { env_var: "fleet_skip_sync_on_startup", env_value: "", desc: "A flag to tell the app not to run an initial synchronisation process when it starts up" }
+
+opt_param_usage_include_vols: false
+opt_param_volumes:
+
+opt_param_usage_include_ports: false
+opt_param_ports:
+
+opt_param_device_map: false
+opt_param_devices:
+
+opt_cap_add_param: false
+opt_cap_add_param_vars:
+
+optional_block_1: false
+optional_block_1_items: ""
+
+# changelog
+changelogs: 
+  - { date: "01.04.19:", desc: "Initial Release" }
