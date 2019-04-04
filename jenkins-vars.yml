@@ -1,0 +1,29 @@
+---
+
+# jenkins variables
+project_name: docker-fleet
+external_type: github_stable
+release_type: stable
+release_tag: latest
+ls_branch: master
+repo_vars:
+  - EXT_GIT_BRANCH = 'master'
+  - EXT_USER = 'linuxserver'
+  - EXT_REPO = 'fleet'
+  - BUILD_VERSION_ARG = 'FLEET_RELEASE'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-fleet'
+  - CONTAINER_NAME = 'fleet'
+  - DOCKERHUB_IMAGE = 'linuxserver/fleet'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/fleet'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/fleet'
+  - DIST_IMAGE = 'alpine'
+  - MULTIARCH='true'
+  - CI='true'
+  - CI_WEB='false'
+  - CI_PORT='8080'
+  - CI_SSL='false'
+  - CI_DELAY='120'
+  - CI_DOCKERENV='TZ=US/Pacific'
+  - CI_AUTH='user:password'
+  - CI_WEBPATH=''
