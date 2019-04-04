@@ -1,4 +1,4 @@
 #!/usr/bin/with-contenv bash
 
 exec \
-	s6-setuidgid abc /usr/bin/java -Dfleet.config.base=/config -Dfleet.app.port=8080 -jar /app/fleet/fleet.jar
+	s6-setuidgid abc /usr/bin/java -Dfleet.config.base=/config -jar /app/fleet/fleet.jar
