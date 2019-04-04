@@ -28,7 +28,6 @@ param_usage_include_net: false
 
 param_usage_include_env: true
 param_env_vars:
-  - { env_var: "fleet_refresh_interval", env_value: "60", desc: "The time in minutes for how often Fleet should scan the Docker Hub repositories." }
   - { env_var: "fleet_admin_authentication_type", env_value: "DATABASE", desc: "A switch to define how Fleet manages user logins. If set to DATABASE, see the related optional params. Can be set to either DATABASE or PROPERTIES." }
   - { env_var: "fleet_database_url", env_value: "jdbc:mariadb://<url>:3306/fleet", desc: "The full JDBC connection string to the Fleet database" }
   - { env_var: "fleet_database_username", env_value: "fleet_user", desc: "The username with the relevant GRANT permissions for the database" }
@@ -46,10 +45,11 @@ param_ports:
 
 opt_param_usage_include_env: true
 opt_param_env_vars:
+  - { env_var: "fleet_refresh_interval", env_value: "60", desc: "The time in minutes for how often Fleet should scan the Docker Hub repositories." }
   - { env_var: "fleet_admin_secret", env_value: "randomstring", desc: "A string used as part of the password key derivation process. Not mandatory. Only used if authentication type is set to DATABASE." }
   - { env_var: "fleet_admin_username", env_value: "admin", desc: "The name of the sole admin user, if authentication type is set to PROPERTIES." }
   - { env_var: "fleet_admin_password", env_value: "secretpassword", desc: "The password for the sole admin user, if authentication type is set to PROPERTIES." }
-  - { env_var: "fleet_skip_sync_on_startup", env_value: "", desc: "A flag to tell the app not to run an initial synchronisation process when it starts up" }
+  - { env_var: "fleet_skip_sync_on_startup", env_value: "true", desc: "A flag to tell the app not to run an initial synchronisation process when it starts up" }
 
 opt_param_usage_include_vols: false
 opt_param_volumes:
@@ -65,6 +65,12 @@ opt_cap_add_param_vars:
 
 optional_block_1: false
 optional_block_1_items: ""
+
+app_setup_block_enabled: true
+app_setup_block: |
+  Navigate to `http://your_ip_here:8080` to display the home page. If `DATABASE` is selected as the preferred authentication process, ensure that you set up an
+  initial user via `http://your_ip_here:8080/setup`. Once done, that page will no longer be available. A restart is preferable as it will remove the page altogether.
+  Once complete, you can log into the app via `http://your_ip_here:8080/login` to manage your repositories.
 
 # changelog
 changelogs: 
