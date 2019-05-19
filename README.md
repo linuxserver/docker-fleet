@@ -208,4 +208,5 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **19.05.19:** - Use new base images for arm versions.
 * **01.04.19:** - Initial Release
