@@ -73,5 +73,6 @@ app_setup_block: |
   Once complete, you can log into the app via `http://your_ip_here:8080/login` to manage your repositories.
 
 # changelog
-changelogs: 
+changelogs:
+  - { date: "19.05.19:", desc: "Use new base images for arm versions." }
   - { date: "01.04.19:", desc: "Initial Release" }
