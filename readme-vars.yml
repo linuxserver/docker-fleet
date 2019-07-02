@@ -74,6 +74,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "02.07.19:", desc: "Rebasing to alpine 3.10." }
   - { date: "02.07.19:", desc: "Stop container if fleet fails." }
   - { date: "19.05.19:", desc: "Use new base images for arm versions." }
   - { date: "01.04.19:", desc: "Initial Release" }
