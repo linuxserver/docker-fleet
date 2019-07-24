@@ -12,7 +12,7 @@ freetype-2.10.0-r0
 giflib-5.1.9-r0
 java-cacerts-1.0-r0
 java-common-0.2-r0
-keyutils-libs-1.6-r0
+keyutils-libs-1.6-r1
 krb5-conf-1.0-r1
 krb5-libs-1.17-r0
 lcms2-2.9-r1
