@@ -26,7 +26,7 @@ libcrypto1.1-1.1.1d-r3
 libcurl-7.67.0-r0
 libffi-3.2.1-r6
 libgcc-9.2.0-r3
-libjpeg-turbo-2.0.3-r0
+libjpeg-turbo-2.0.4-r0
 liblksctp-1.0.18-r1
 libpng-1.6.37-r1
 libssl1.1-1.1.1d-r3
