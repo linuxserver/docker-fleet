@@ -138,6 +138,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e fleet_skip_sync_on_startup=true` | A flag to tell the app not to run an initial synchronisation process when it starts up |
 | `-v /config` | The primary config file and rolling log files. |
 
+
 ## Environment variables from files (Docker secrets)
 
 You can set any environment variable from a file by using a special prepend `FILE__`. 
