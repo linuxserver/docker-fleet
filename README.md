@@ -7,7 +7,7 @@
 [![GitHub](https://img.shields.io/static/v1.svg?style=flat-square&color=E68523&label=linuxserver.io&message=GitHub&logo=github&logoColor=FFFFFF)](https://github.com/linuxserver "view the source for all of our repositories.")
 [![Open Collective](https://img.shields.io/opencollective/all/linuxserver.svg?style=flat-square&color=E68523&label=Supporters&logo=open%20collective&logoColor=FFFFFF)](https://opencollective.com/linuxserver "please consider helping us by either donating or contributing to our budget")
 
-The [LinuxServer.io](https://linuxserver.io) team brings you another container release featuring :-
+The [LinuxServer.io](https://linuxserver.io) team brings you another container release featuring:
 
  * regular and timely application updates
  * easy user mappings (PGID, PUID)
@@ -90,7 +90,7 @@ Compatible with docker-compose v2 schemas.
 
 ```
 ---
-version: "2"
+version: "2.1"
 services:
   fleet:
     image: linuxserver/fleet
@@ -171,6 +171,11 @@ Navigate to `http://your_ip_here:8080` to display the home page. If `DATABASE` i
 initial user via `http://your_ip_here:8080/setup`. Once done, that page will no longer be available. A restart is preferable as it will remove the page altogether.
 Once complete, you can log into the app via `http://your_ip_here:8080/login` to manage your repositories.
 
+
+## Docker Mods
+[![Docker Mods](https://img.shields.io/badge/dynamic/yaml?style=for-the-badge&color=E68523&label=mods&query=%24.mods%5B%27fleet%27%5D.mod_count&url=https%3A%2F%2Fraw.githubusercontent.com%2Flinuxserver%2Fdocker-mods%2Fmaster%2Fmod-list.yml)](https://mods.linuxserver.io/?mod=fleet "view available mods for this container.")
+
+We publish various [Docker Mods](https://github.com/linuxserver/docker-mods) to enable additional functionality within the containers. The list of Mods available for this image (if any) can be accessed via the dynamic badge above.
 
 
 ## Support Info
