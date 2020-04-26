@@ -23,7 +23,7 @@ RUN \
  fi && \
  mkdir -p \
 	/app/fleet && \
- FLEET_RELEASE="2.0.0" curl -o \
+ curl -o \
 	/app/fleet/fleet.jar -L \
 	"https://github.com/linuxserver/fleet/releases/download/${FLEET_RELEASE}/fleet-${FLEET_RELEASE}.jar" && \
  echo "**** clean up ****" && \
