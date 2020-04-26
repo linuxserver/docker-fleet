@@ -5,7 +5,7 @@ ARG BUILD_DATE
 ARG VERSION
 ARG FLEET_RELEASE
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="JAGFin1,Thelamer"
+LABEL maintainer="Josh Stark,Thelamer"
 
 # default env
 ENV fleet_database_driver="org.mariadb.jdbc.Driver" \
