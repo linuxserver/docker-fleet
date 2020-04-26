@@ -27,7 +27,7 @@ pipeline {
     DEV_DOCKERHUB_IMAGE = 'lsiodev/fleet'
     PR_DOCKERHUB_IMAGE = 'lspipepr/fleet'
     DIST_IMAGE = 'alpine'
-    MULTIARCH='true'
+    MULTIARCH='false'
     CI='true'
     CI_WEB='false'
     CI_PORT='8080'

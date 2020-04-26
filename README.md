@@ -70,13 +70,7 @@ docker create \
   -e fleet_database_url=jdbc:mariadb://<url>:3306/fleet \
   -e fleet_database_username=fleet_user \
   -e fleet_database_password=dbuserpassword \
-  -e fleet_dockerhub_username=dockerhub_user \
-  -e fleet_dockerhub_password=password \
-  -e fleet_refresh_interval=60 `#optional` \
   -e fleet_admin_secret=randomstring `#optional` \
-  -e fleet_admin_username=admin `#optional` \
-  -e fleet_admin_password=secretpassword `#optional` \
-  -e fleet_skip_sync_on_startup=true `#optional` \
   -p 8080:8080 \
   -v </path/to/appdata/config>:/config \
   --restart unless-stopped \
@@ -102,13 +96,7 @@ services:
       - fleet_database_url=jdbc:mariadb://<url>:3306/fleet
       - fleet_database_username=fleet_user
       - fleet_database_password=dbuserpassword
-      - fleet_dockerhub_username=dockerhub_user
-      - fleet_dockerhub_password=password
-      - fleet_refresh_interval=60 #optional
       - fleet_admin_secret=randomstring #optional
-      - fleet_admin_username=admin #optional
-      - fleet_admin_password=secretpassword #optional
-      - fleet_skip_sync_on_startup=true #optional
     volumes:
       - </path/to/appdata/config>:/config
     ports:
@@ -129,13 +117,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e fleet_database_url=jdbc:mariadb://<url>:3306/fleet` | The full JDBC connection string to the Fleet database |
 | `-e fleet_database_username=fleet_user` | The username with the relevant GRANT permissions for the database |
 | `-e fleet_database_password=dbuserpassword` | The database user's password. |
-| `-e fleet_dockerhub_username=dockerhub_user` | The username of a member of your repository's owners team. This is used to get the list of your (and only your) namespaces in Docker Hub. |
-| `-e fleet_dockerhub_password=password` | The password for the Docker Hub user. |
-| `-e fleet_refresh_interval=60` | The time in minutes for how often Fleet should scan the Docker Hub repositories. |
-| `-e fleet_admin_secret=randomstring` | A string used as part of the password key derivation process. Not mandatory. Only used if authentication type is set to DATABASE. |
-| `-e fleet_admin_username=admin` | The name of the sole admin user, if authentication type is set to PROPERTIES. |
-| `-e fleet_admin_password=secretpassword` | The password for the sole admin user, if authentication type is set to PROPERTIES. |
-| `-e fleet_skip_sync_on_startup=true` | A flag to tell the app not to run an initial synchronisation process when it starts up |
+| `-e fleet_admin_secret=randomstring` | A string used as part of the password key derivation process. |
 | `-v /config` | The primary config file and rolling log files. |
 
 ## Environment variables from files (Docker secrets)
@@ -242,6 +224,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **26.04.20:** - Updated to keep in line with v2.0.0 branch of Fleet
 * **19.12.19:** - Rebasing to alpine 3.11.
 * **02.07.19:** - Rebasing to alpine 3.10.
 * **02.07.19:** - Stop container if fleet fails.
