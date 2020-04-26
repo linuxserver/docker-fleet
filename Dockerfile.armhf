@@ -9,15 +9,14 @@ LABEL maintainer="JAGFin1,Thelamer"
 
 # default env
 ENV fleet_database_driver="org.mariadb.jdbc.Driver" \
-fleet_app_port=8080 \
-fleet_refresh_interval=60
+fleet_app_port=8080
 
 RUN \
  echo "**** install runtime packages ****" && \
  apk add --no-cache \
 	curl \
 	nss \
-	openjdk8-jre && \
+	openjdk11-jre && \
  echo "**** install fleet ****" && \
  if [ -z ${FLEET_RELEASE+x} ]; then \
 	FLEET_RELEASE=$(curl -sX GET "https://api.github.com/repos/linuxserver/fleet/releases/latest" \
