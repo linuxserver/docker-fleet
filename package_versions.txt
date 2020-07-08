@@ -89,7 +89,7 @@ libncursesw56.1-1ubuntu1.18.04
 libnettle63.4-1
 libnghttp2-141.30.0-1ubuntu1
 libnspr42:4.18-1ubuntu1
-libnss32:3.35-2ubuntu2.8
+libnss32:3.35-2ubuntu2.9
 libp11-kit00.23.9-2
 libpam0g1.1.8-3.6ubuntu2.18.04.1
 libpam-modules1.1.8-3.6ubuntu2.18.04.1
@@ -105,7 +105,7 @@ librtmp12.4+20151223.gitfa8646d.1-1
 libsasl2-22.1.27~101-g0780600+dfsg-3ubuntu2.1
 libsasl2-modules2.1.27~101-g0780600+dfsg-3ubuntu2.1
 libsasl2-modules-db2.1.27~101-g0780600+dfsg-3ubuntu2.1
-libseccomp22.4.1-0ubuntu0.18.04.2
+libseccomp22.4.3-1ubuntu3.18.04.2
 libselinux12.7-2build2
 libsemanage12.7-2build2
 libsemanage-common2.7-2build2
@@ -137,7 +137,7 @@ login1:4.5-1ubuntu2
 lsb-base9.20170808ubuntu1
 mawk1.3.3-17ubuntu3
 mount2.31.1-0.4ubuntu3.6
-multiarch-support2.27-3ubuntu1
+multiarch-support2.27-3ubuntu1.2
 ncurses-base6.1-1ubuntu1.18.04
 ncurses-bin6.1-1ubuntu1.18.04
 openjdk-11-jre-headless11.0.7+10-2ubuntu2~18.04
