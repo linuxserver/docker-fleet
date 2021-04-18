@@ -40,6 +40,7 @@ Find us at:
 [![LSIO CI](https://img.shields.io/badge/dynamic/yaml?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=CI&query=CI&url=https%3A%2F%2Fci-tests.linuxserver.io%2Flinuxserver%2Ffleet%2Flatest%2Fci-status.yml)](https://ci-tests.linuxserver.io/linuxserver/fleet/latest/index.html)
 
 [Fleet](https://github.com/linuxserver/fleet) provides an online web interface which displays a set of maintained images from one or more owned repositories.
+
 [![fleet]()](https://github.com/linuxserver/fleet)
 
 ## Supported Architectures
