@@ -68,6 +68,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "13.12.21:", desc: "Add mitigations for CVE-2021-44228"}
   - { date: "26.04.20:", desc: "Updated to keep in line with v2.0.0 branch of Fleet"}
   - { date: "19.12.19:", desc: "Rebasing to alpine 3.11." }
   - { date: "02.07.19:", desc: "Rebasing to alpine 3.10." }
