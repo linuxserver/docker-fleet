@@ -6,6 +6,7 @@ external_type: github_stable
 release_type: stable
 release_tag: latest
 ls_branch: master
+build_armhf: false
 repo_vars:
   - EXT_GIT_BRANCH = 'master'
   - EXT_USER = 'linuxserver'
@@ -19,7 +20,7 @@ repo_vars:
   - PR_DOCKERHUB_IMAGE = 'lspipepr/fleet'
   - DIST_IMAGE = 'alpine'
   - MULTIARCH='true'
-  - CI='true'
+  - CI='false'
   - CI_WEB='false'
   - CI_PORT='8080'
   - CI_SSL='false'
