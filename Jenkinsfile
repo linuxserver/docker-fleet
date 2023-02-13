@@ -29,7 +29,7 @@ pipeline {
     PR_DOCKERHUB_IMAGE = 'lspipepr/fleet'
     DIST_IMAGE = 'alpine'
     MULTIARCH='true'
-    CI='true'
+    CI='false'
     CI_WEB='false'
     CI_PORT='8080'
     CI_SSL='false'
