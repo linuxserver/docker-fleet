@@ -14,7 +14,6 @@ project_blurb_optional_extras: []
 available_architectures:
   - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
   - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-  - { arch: "{{ arch_armhf }}", tag: "arm32v7-latest"}
 
 # development version
 development_versions: false
@@ -35,7 +34,7 @@ param_env_vars:
 
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "</path/to/appdata/config>", desc: "The primary config file and rolling log files." }
+  - { vol_path: "/config", vol_host_path: "/path/to/appdata/config", desc: "The primary config file and rolling log files." }
 
 param_usage_include_ports: true
 param_ports:
@@ -68,6 +67,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "13.02.23:", desc: "Rebase to Alpine 3.17, migrate to s6v3."}
   - { date: "02.05.22:", desc: "Rebase to Alpine 3.15."}
   - { date: "13.12.21:", desc: "Add mitigations for CVE-2021-44228"}
   - { date: "26.04.20:", desc: "Updated to keep in line with v2.0.0 branch of Fleet"}

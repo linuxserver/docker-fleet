@@ -56,7 +56,7 @@ The architectures supported by this image are:
 | :----: | :----: | ---- |
 | x86-64 | ✅ | amd64-\<version tag\> |
 | arm64 | ✅ | arm64v8-\<version tag\> |
-| armhf | ✅ | arm32v7-\<version tag\> |
+| armhf | ❌ | |
 
 ## Application Setup
 
@@ -87,7 +87,7 @@ services:
       - fleet_database_password=dbuserpassword
       - fleet_admin_secret=randomstring #optional
     volumes:
-      - </path/to/appdata/config>:/config
+      - /path/to/appdata/config:/config
     ports:
       - 8080:8080
     restart: unless-stopped
@@ -107,7 +107,7 @@ docker run -d \
   -e fleet_database_password=dbuserpassword \
   -e fleet_admin_secret=randomstring `#optional` \
   -p 8080:8080 \
-  -v </path/to/appdata/config>:/config \
+  -v /path/to/appdata/config:/config \
   --restart unless-stopped \
   lscr.io/linuxserver/fleet:latest
 
@@ -239,6 +239,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **13.02.23:** - Rebase to Alpine 3.17, migrate to s6v3.
 * **02.05.22:** - Rebase to Alpine 3.15.
 * **13.12.21:** - Add mitigations for CVE-2021-44228
 * **26.04.20:** - Updated to keep in line with v2.0.0 branch of Fleet
