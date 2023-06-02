@@ -17,7 +17,7 @@ commons-codec           1.11                 java-archive
 commons-lang3           3.12.0               java-archive  
 commons-logging         1.2                  java-archive  
 coreutils               9.1-r0               apk           
-curl                    8.1.0-r1             apk           
+curl                    8.1.1-r1             apk           
 fleet                                        java-archive  
 flyway-core             8.2.0                java-archive  
 httpclient              4.5.13               java-archive  
@@ -46,7 +46,7 @@ libattr                 2.5.1-r2             apk
 libbsd                  0.11.7-r0            apk           
 libc-utils              0.7.2-r3             apk           
 libcrypto3              3.0.8-r4             apk           
-libcurl                 8.1.0-r1             apk           
+libcurl                 8.1.1-r1             apk           
 libffi                  3.4.4-r0             apk           
 libintl                 0.21.1-r1            apk           
 libmd                   1.0.4-r0             apk           
@@ -60,8 +60,8 @@ log4j-slf4j-impl        2.19.0               java-archive
 mariadb-java-client     3.0.6                java-archive  
 musl                    1.2.3-r5             apk           
 musl-utils              1.2.3-r5             apk           
-ncurses-libs            6.3_p20221119-r0     apk           
-ncurses-terminfo-base   6.3_p20221119-r0     apk           
+ncurses-libs            6.3_p20221119-r1     apk           
+ncurses-terminfo-base   6.3_p20221119-r1     apk           
 netcat-openbsd          1.130-r4             apk           
 nghttp2-libs            1.51.0-r0            apk           
 oniguruma               6.9.8-r0             apk           
