@@ -17,7 +17,7 @@ commons-codec           1.11                 java-archive
 commons-lang3           3.12.0               java-archive  
 commons-logging         1.2                  java-archive  
 coreutils               9.1-r0               apk           
-curl                    8.1.1-r1             apk           
+curl                    8.1.2-r0             apk           
 fleet                                        java-archive  
 flyway-core             8.2.0                java-archive  
 httpclient              4.5.13               java-archive  
@@ -45,13 +45,13 @@ libacl                  2.3.1-r1             apk
 libattr                 2.5.1-r2             apk           
 libbsd                  0.11.7-r0            apk           
 libc-utils              0.7.2-r3             apk           
-libcrypto3              3.0.8-r4             apk           
-libcurl                 8.1.1-r1             apk           
+libcrypto3              3.0.9-r1             apk           
+libcurl                 8.1.2-r0             apk           
 libffi                  3.4.4-r0             apk           
 libintl                 0.21.1-r1            apk           
 libmd                   1.0.4-r0             apk           
 libproc                 3.3.17-r2            apk           
-libssl3                 3.0.8-r4             apk           
+libssl3                 3.0.9-r1             apk           
 libtasn1                4.19.0-r0            apk           
 linux-pam               1.5.2-r1             apk           
 log4j-api               2.19.0               java-archive  
