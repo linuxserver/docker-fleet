@@ -67,6 +67,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "12.07.23:", desc: "Rebase to Alpine 3.18."}
   - { date: "13.02.23:", desc: "Rebase to Alpine 3.17, migrate to s6v3."}
   - { date: "02.05.22:", desc: "Rebase to Alpine 3.15."}
   - { date: "13.12.21:", desc: "Add mitigations for CVE-2021-44228"}
