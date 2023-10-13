@@ -59,8 +59,8 @@ log4j-api               2.19.0            java-archive
 log4j-core              2.19.0            java-archive  
 log4j-slf4j-impl        2.19.0            java-archive  
 mariadb-java-client     3.0.6             java-archive  
-musl                    1.2.4-r1          apk           
-musl-utils              1.2.4-r1          apk           
+musl                    1.2.4-r2          apk           
+musl-utils              1.2.4-r2          apk           
 ncurses-terminfo-base   6.4_p20230506-r0  apk           
 netcat-openbsd          1.219-r1          apk           
 nghttp2-libs            1.55.1-r0         apk           
