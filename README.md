@@ -84,7 +84,7 @@ services:
       - fleet_database_password=dbuserpassword
       - fleet_admin_secret=randomstring #optional
     volumes:
-      - /path/to/appdata/config:/config
+      - /path/to/fleet/config:/config
     ports:
       - 8080:8080
     restart: unless-stopped
@@ -104,7 +104,7 @@ docker run -d \
   -e fleet_database_password=dbuserpassword \
   -e fleet_admin_secret=randomstring `#optional` \
   -p 8080:8080 \
-  -v /path/to/appdata/config:/config \
+  -v /path/to/fleet/config:/config \
   --restart unless-stopped \
   lscr.io/linuxserver/fleet:latest
 ```
@@ -287,6 +287,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **20.03.24:** - Rebase to Alpine 3.19.
 * **12.07.23:** - Rebase to Alpine 3.18.
 * **13.02.23:** - Rebase to Alpine 3.17, migrate to s6v3.
 * **02.05.22:** - Rebase to Alpine 3.15.
