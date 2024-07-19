@@ -62,6 +62,11 @@ Navigate to `http://your_ip_here:8080` to display the home page. If `DATABASE` i
 initial user via `http://your_ip_here:8080/setup`. Once done, that page will no longer be available. A restart is preferable as it will remove the page altogether.
 Once complete, you can log into the app via `http://your_ip_here:8080/login` to manage your repositories.
 
+## Read-Only Operation
+
+This image can be run with a read-only container filesystem. For details please [read the docs](https://docs.linuxserver.io/misc/read-only/).
+
+
 ## Usage
 
 To help you get started creating a container from this image you can either use docker-compose or the docker cli.
@@ -125,6 +130,7 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e fleet_database_password=dbuserpassword` | The database user's password. |
 | `-e fleet_admin_secret=randomstring` | A string used as part of the password key derivation process. |
 | `-v /config` | The primary config file and rolling log files. |
+| `--read-only=true` | Run container with a read-only filesystem. Please [read the docs](https://docs.linuxserver.io/misc/read-only/). |
 
 ## Environment variables from files (Docker secrets)
 
