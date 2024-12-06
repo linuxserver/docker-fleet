@@ -6,54 +6,88 @@ project_url: "https://github.com/linuxserver/fleet"
 project_logo: ""
 project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) provides an online web interface which displays a set of maintained images from one or more owned repositories."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
-
 # supported architectures
 available_architectures:
-  - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
-  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-
+  - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
+  - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
-
 param_usage_include_env: true
 param_env_vars:
-  - { env_var: "fleet_admin_authentication_type", env_value: "DATABASE", desc: "A switch to define how Fleet manages user logins. If set to DATABASE, see the related optional params. Can be set to either DATABASE or PROPERTIES." }
-  - { env_var: "fleet_database_url", env_value: "jdbc:mariadb://<url>:3306/fleet", desc: "The full JDBC connection string to the Fleet database" }
-  - { env_var: "fleet_database_username", env_value: "fleet_user", desc: "The username with the relevant GRANT permissions for the database" }
-  - { env_var: "fleet_database_password", env_value: "dbuserpassword", desc: "The database user's password." }
-
+  - {env_var: "fleet_admin_authentication_type", env_value: "DATABASE", desc: "A switch to define how Fleet manages user logins. If set to DATABASE, see the related optional params. Can be set to either DATABASE or PROPERTIES."}
+  - {env_var: "fleet_database_url", env_value: "jdbc:mariadb://<url>:3306/fleet", desc: "The full JDBC connection string to the Fleet database"}
+  - {env_var: "fleet_database_username", env_value: "fleet_user", desc: "The username with the relevant GRANT permissions for the database"}
+  - {env_var: "fleet_database_password", env_value: "dbuserpassword", desc: "The database user's password."}
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "The primary config file and rolling log files." }
-
+  - {vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "The primary config file and rolling log files."}
 param_usage_include_ports: true
 param_ports:
-  - { external_port: "8080", internal_port: "8080", port_desc: "Http port" }
-
+  - {external_port: "8080", internal_port: "8080", port_desc: "Http port"}
 opt_param_usage_include_env: true
 opt_param_env_vars:
-  - { env_var: "fleet_admin_secret", env_value: "randomstring", desc: "A string used as part of the password key derivation process." }
-
+  - {env_var: "fleet_admin_secret", env_value: "randomstring", desc: "A string used as part of the password key derivation process."}
 readonly_supported: true
-
 app_setup_block_enabled: true
 app_setup_block: |
   Navigate to `http://your_ip_here:8080` to display the home page. If `DATABASE` is selected as the preferred authentication process, ensure that you set up an
   initial user via `http://your_ip_here:8080/setup`. Once done, that page will no longer be available. A restart is preferable as it will remove the page altogether.
   Once complete, you can log into the app via `http://your_ip_here:8080/login` to manage your repositories.
-
+# init diagram
+init_diagram: |
+  "fleet:latest": {
+    docker-mods
+    base {
+      fix-attr +\nlegacy cont-init
+    }
+    docker-mods -> base
+    legacy-services
+    custom services
+    init-services -> legacy-services
+    init-services -> custom services
+    custom services -> legacy-services
+    legacy-services -> ci-service-check
+    init-migrations -> init-adduser
+    init-os-end -> init-config
+    init-config -> init-config-end
+    init-fleet-config -> init-config-end
+    init-os-end -> init-crontab-config
+    init-mods-end -> init-custom-files
+    base -> init-envfile
+    init-config -> init-fleet-config
+    base -> init-migrations
+    base -> init-mods
+    init-config-end -> init-mods
+    init-mods -> init-mods-end
+    init-mods-package-install -> init-mods-end
+    init-mods -> init-mods-package-install
+    base -> init-os-end
+    init-adduser -> init-os-end
+    init-envfile -> init-os-end
+    init-migrations -> init-os-end
+    init-custom-files -> init-services
+    init-mods-end -> init-services
+    init-services -> svc-cron
+    svc-cron -> legacy-services
+    init-services -> svc-fleet
+    svc-fleet -> legacy-services
+  }
+  Base Images: {
+    "baseimage-alpine:3.20"
+  }
+  "fleet:latest" <- Base Images
 # changelog
 changelogs:
-  - { date: "04.06.24:", desc: "Rebase to Alpine 3.20."}
-  - { date: "20.03.24:", desc: "Rebase to Alpine 3.19."}
-  - { date: "12.07.23:", desc: "Rebase to Alpine 3.18."}
-  - { date: "13.02.23:", desc: "Rebase to Alpine 3.17, migrate to s6v3."}
-  - { date: "02.05.22:", desc: "Rebase to Alpine 3.15."}
-  - { date: "13.12.21:", desc: "Add mitigations for CVE-2021-44228"}
-  - { date: "26.04.20:", desc: "Updated to keep in line with v2.0.0 branch of Fleet"}
-  - { date: "19.12.19:", desc: "Rebasing to alpine 3.11." }
-  - { date: "02.07.19:", desc: "Rebasing to alpine 3.10." }
-  - { date: "02.07.19:", desc: "Stop container if fleet fails." }
-  - { date: "19.05.19:", desc: "Use new base images for arm versions." }
-  - { date: "01.04.19:", desc: "Initial Release" }
+  - {date: "04.06.24:", desc: "Rebase to Alpine 3.20."}
+  - {date: "20.03.24:", desc: "Rebase to Alpine 3.19."}
+  - {date: "12.07.23:", desc: "Rebase to Alpine 3.18."}
+  - {date: "13.02.23:", desc: "Rebase to Alpine 3.17, migrate to s6v3."}
+  - {date: "02.05.22:", desc: "Rebase to Alpine 3.15."}
+  - {date: "13.12.21:", desc: "Add mitigations for CVE-2021-44228"}
+  - {date: "26.04.20:", desc: "Updated to keep in line with v2.0.0 branch of Fleet"}
+  - {date: "19.12.19:", desc: "Rebasing to alpine 3.11."}
+  - {date: "02.07.19:", desc: "Rebasing to alpine 3.10."}
+  - {date: "02.07.19:", desc: "Stop container if fleet fails."}
+  - {date: "19.05.19:", desc: "Use new base images for arm versions."}
+  - {date: "01.04.19:", desc: "Initial Release"}
