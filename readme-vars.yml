@@ -29,6 +29,7 @@ opt_param_usage_include_env: true
 opt_param_env_vars:
   - {env_var: "fleet_admin_secret", env_value: "randomstring", desc: "A string used as part of the password key derivation process."}
 readonly_supported: true
+nonroot_supported: true
 app_setup_block_enabled: true
 app_setup_block: |
   Navigate to `http://your_ip_here:8080` to display the home page. If `DATABASE` is selected as the preferred authentication process, ensure that you set up an
@@ -79,6 +80,7 @@ init_diagram: |
   "fleet:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "24.12.24:", desc: "Rebase to Alpine 3.21."}
   - {date: "04.06.24:", desc: "Rebase to Alpine 3.20."}
   - {date: "20.03.24:", desc: "Rebase to Alpine 3.19."}
   - {date: "12.07.23:", desc: "Rebase to Alpine 3.18."}
