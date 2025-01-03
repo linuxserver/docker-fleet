@@ -89,4 +89,4 @@ websocket-common        9.4.20.v20190813  java-archive
 websocket-server        9.4.20.v20190813  java-archive    
 websocket-servlet       9.4.20.v20190813  java-archive    
 zlib                    1.3.1-r2          apk             
-zstd-libs               1.5.6-r1          apk             
+zstd-libs               1.5.6-r2          apk             
