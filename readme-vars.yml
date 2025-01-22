@@ -6,6 +6,7 @@ project_url: "https://github.com/linuxserver/fleet"
 project_logo: ""
 project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) provides an online web interface which displays a set of maintained images from one or more owned repositories."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_categories: "Docker"
 # supported architectures
 available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
