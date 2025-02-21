@@ -4,9 +4,9 @@ acl-libs                2.3.2-r1          apk
 alpine-baselayout       3.6.8-r1          apk             
 alpine-baselayout-data  3.6.8-r1          apk             
 alpine-keys             2.5-r0            apk             
-alpine-release          3.21.2-r0         apk             
+alpine-release          3.21.3-r0         apk             
 annotations             13.0              java-archive    
-apk-tools               2.14.6-r2         apk             
+apk-tools               2.14.6-r3         apk             
 bash                    5.2.37-r0         apk             
 brotli-libs             1.1.0-r2          apk             
 busybox                 1.37.0-r12        apk             
@@ -22,7 +22,7 @@ coreutils               9.5-r2            apk
 coreutils-env           9.5-r2            apk             
 coreutils-fmt           9.5-r2            apk             
 coreutils-sha512sum     9.5-r2            apk             
-curl                    8.12.0-r0         apk             
+curl                    8.12.1-r0         apk             
 findutils               4.10.0-r0         apk             
 fleet                   UNKNOWN           java-archive    
 flyway-core             8.2.0             java-archive    
@@ -48,8 +48,8 @@ jq                      1.7.1-r0          apk
 jrt-fs                  11.0.26           java-archive    
 libattr                 2.5.2-r2          apk             
 libbsd                  0.12.2-r0         apk             
-libcrypto3              3.3.2-r5          apk             
-libcurl                 8.12.0-r0         apk             
+libcrypto3              3.3.3-r0          apk             
+libcurl                 8.12.1-r0         apk             
 libffi                  3.4.6-r0          apk             
 libidn2                 2.3.7-r0          apk             
 libintl                 0.22.5-r0         apk             
@@ -57,7 +57,7 @@ libmd                   1.1.0-r0          apk
 libncursesw             6.5_p20241006-r3  apk             
 libproc2                4.0.4-r2          apk             
 libpsl                  0.21.5-r3         apk             
-libssl3                 3.3.2-r5          apk             
+libssl3                 3.3.3-r0          apk             
 libtasn1                4.20.0-r0         apk             
 libunistring            1.2-r0            apk             
 linux-pam               1.6.1-r1          apk             
@@ -65,8 +65,8 @@ log4j-api               2.19.0            java-archive
 log4j-core              2.19.0            java-archive    
 log4j-slf4j-impl        2.19.0            java-archive    
 mariadb-java-client     3.0.6             java-archive    
-musl                    1.2.5-r8          apk             
-musl-utils              1.2.5-r8          apk             
+musl                    1.2.5-r9          apk             
+musl-utils              1.2.5-r9          apk             
 ncurses-terminfo-base   6.5_p20241006-r3  apk             
 netcat-openbsd          1.226.1.1-r0      apk             
 nghttp2-libs            1.64.0-r0         apk             
@@ -81,7 +81,7 @@ shadow                  4.16.0-r1         apk
 skalibs-libs            2.14.3.0-r0       apk             
 slf4j-api               1.7.30            java-archive    
 ssl_client              1.37.0-r12        apk             
-tzdata                  2024b-r1          apk             
+tzdata                  2025a-r0          apk             
 utmps-libs              0.1.2.3-r2        apk             
 websocket-api           9.4.20.v20190813  java-archive    
 websocket-client        9.4.20.v20190813  java-archive    
