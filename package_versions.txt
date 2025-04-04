@@ -81,7 +81,7 @@ shadow                  4.16.0-r1         apk
 skalibs-libs            2.14.3.0-r0       apk             
 slf4j-api               1.7.30            java-archive    
 ssl_client              1.37.0-r12        apk             
-tzdata                  2025a-r0          apk             
+tzdata                  2025b-r0          apk             
 utmps-libs              0.1.2.3-r2        apk             
 websocket-api           9.4.20.v20190813  java-archive    
 websocket-client        9.4.20.v20190813  java-archive    
