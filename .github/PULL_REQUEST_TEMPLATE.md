@@ -1,3 +1,8 @@
+# DEPRECATION NOTICE 
+This image is deprecated. We will not offer support for this image and it will not be updated.
+
+
+We deprecated our Fleet container and Fleet application due to issues maintaining the necessary level of development
 <!--- Provide a general summary of your changes in the Title above -->
 
 [linuxserverurl]: https://linuxserver.io
